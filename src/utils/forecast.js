@@ -8,7 +8,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback("Unable to process location.", undefined)
         } else {
-            callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees with a ' + body.currently.precipProbability + ' chance of rain.')
+            callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees with a ' + body.currently.precipProbability + ' chance of rain. \n For today, the high temperature is ' + body.daily.data[0].temperatureHigh + ", and the low temperature is " + body.daily.data[0].temperatureLow + ".")
         }
     })
 }
